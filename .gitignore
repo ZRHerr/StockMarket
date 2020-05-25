@@ -18,6 +18,8 @@ _mailinglist
 docs/_build/
 *.db
 *.jpg
+.vscode
+config.py
 
 # Coverage reports
 htmlcov/
