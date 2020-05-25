@@ -1,4 +1,4 @@
-## Under Contruction
+## Zach's stock market app
 
 ### Setting up Virtual Environment (first time in repo)
 
@@ -19,3 +19,10 @@
 5. `deactivate` to leave the virtual environment
 6. `pip freeze` can export a list of all installed packages and their versions from the virtual environment creating your `requirements.txt`
 7. `pip3 install -r requirements.txt` (installing dependencies for this application)
+
+### Aplication Insights
+
+---
+
+- API-key's can be found on alpha_vantage's website
+- Incriment's of data are personalized to me, as well as the common technical indicators I use or have made.
