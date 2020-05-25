@@ -1,0 +1,26 @@
+.DS_Store
+.env
+*.pyc
+*.pyo
+env/
+venv/
+migrations/
+env*
+dist/
+build/
+*.egg
+*.egg-info/
+_mailinglist
+.tox/
+.cache/
+.pytest_cache/
+.idea/
+docs/_build/
+*.db
+*.jpg
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+*,cover
