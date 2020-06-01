@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }}
+    /> <link rel="stylesheet" href={{ url_for('static',
+    filename='css/topStyle.css') }} />
+  </head>
+  <body>
+    <div id="title">
+      <a href="/">
+        <img id="logo" src= {{ url_for('static', filename='images/#') }} />
+      </a>
+      <form>
+        <input id="searchBox" type="text" name="searchQuery" />
+        <input id="searchButton" type="submit" value="Search" />
+      </form>
+
+      {% if not loggedIn %}
+      <div id="signInButton">
+        <a class="link" href="/loginForm">Sign In</a>
+      </div>
+      {% else %}
+      <div class="dropdown">
+        <button class="dropbtn">Hello, <br />{{firstName}}</button>
+        <div class="dropdown-content">
+          <a href="/account/recentSearches">Recent Searches</a>
+          <a href="/account/profile">Your profile</a>
+          <hr />
+          <a href="/logout">Sign Out</a>
+        </div>
+      </div>
+      {% endif %}
+      <div id="watchlist">
+        <a class="link" href="/watchList">
+          <img src={{url_for('static', filename='images/#')}} id="#" />
+          Watchlist {{noOfItems}}
+        </a>
+      </div>
+    </div>
+    <div class="display">
+      <div class="displayCategory">
+        <h2>Filter by Symbol:</h2>
+        <ul>
+          {% for row in symbolData %}
+          <li><a href="/displaySymbol?symbolId={{row[0]}}">{{row[1]}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>Data</h2>
+        {% for data in itemData %}
+        <table>
+          <tr id="symbolName">
+            {% for row in data %}
+            <td>
+              {{row[1]}}
+            </td>
+            {% endfor %}
+          </tr>
+          <tr id="symbolImage">
+            {% for row in data %}
+            <td>
+              <a href="/symbolDescription?symbolId={{row[0]}}">
+                <img src={{ url_for('static', filename='uploads/' + row[4]) }}
+                id="symbolImage" />
+              </a>
+            </td>
+            {% endfor %}
+          </tr>
+          <tr id="closePrice">
+            {% for row in data %}
+            <td>
+              ${{row[2]}}
+            </td>
+            {% endfor %}
+          </tr>
+        </table>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
