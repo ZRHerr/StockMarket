@@ -20,9 +20,19 @@
 6. `pip freeze` can export a list of all installed packages and their versions from the virtual environment creating your `requirements.txt`
 7. `pip3 install -r requirements.txt` (installing dependencies for this application)
 
+### Dependencies
+
+---
+
+1. Python3
+2. Flask
+3. Sqlite
+4. Alpha Vantage
+
 ### Aplication Insights
 
 ---
 
+- Set up database by running database.py
 - API-key's can be found on alpha_vantage's website
 - Incriment's of data are personalized to me, as well as the common technical indicators I use or have made.
